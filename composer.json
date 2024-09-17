@@ -27,18 +27,24 @@
         }
     },
     "require": {
-        "php": ">=7.1",
-        "cleaniquecoders/blueprint-macro": "^2.2",
-        "cleaniquecoders/laravel-helper": "^1.1",
-        "cleaniquecoders/laravel-observers": "^1.1",
-        "cleaniquecoders/money-wrapper": "^1.1",
-        "cleaniquecoders/profile": "^1.2",
-        "illuminate/support": "~6.0|~7.0"
+        "php": ">=8.1",
+        "cleaniquecoders/blueprint-macro": "^5.2",
+        "cleaniquecoders/laravel-helper": "^4.2",
+        "cleaniquecoders/laravel-observers": "^4.2",
+        "cleaniquecoders/money-wrapper": "dev-master",
+        "cleaniquecoders/profile": "^5.0",
+        "illuminate/support": "~10.0"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/devjaythakkar/money-wrapper.git"
+        }
+    ],
     "require-dev": {
         "mockery/mockery": "^1.1",
-        "orchestra/testbench": "3.5.*|3.6.*|3.7.*",
-        "phpunit/phpunit": "^6.5|^7.0"
+        "orchestra/testbench": "^8.0",
+        "phpunit/phpunit": "^10.0"
     },
     "extra": {
         "laravel": {
@@ -53,6 +59,6 @@
     "config": {
         "sort-packages": true
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }
