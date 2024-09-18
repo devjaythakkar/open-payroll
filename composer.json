@@ -31,6 +31,7 @@
         "cleaniquecoders/blueprint-macro": "^5.2",
         "cleaniquecoders/laravel-helper": "^4.2",
         "cleaniquecoders/laravel-observers": "^4.2",
+        "devjaythakkar/money-wrapper": "dev-master",
         "cleaniquecoders/profile": "^5.0",
         "illuminate/support": "~10.0"
     },
