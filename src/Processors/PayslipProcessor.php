@@ -59,11 +59,11 @@ class PayslipProcessor implements CalculateContract
 
             $deduction_amount = 0;
             foreach ($deductions as $deduction) {
-                $class = config('open-payroll.processors.deductions.' . Str::studly($earning->type->name));
+                $class = config('open-payroll.processors.deductions.' . Str::studly($deduction->type->name));
                 if (class_exists($class)) {
                     $deduction_amount += $class::make($deduction)->calculate();
                 } else {
-                    $deduction_amount += $earning->amount;
+                    $deduction_amount += $deduction->amount;
                 }
             }
 
