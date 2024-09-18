@@ -2,7 +2,7 @@
 
 namespace App\Models\OpenPayroll;
 
-use App\User;
+use App\Models\User;
 use JayThakkar\Profile\Traits\HasProfile;
 use JayThakkar\Profile\Traits\Morphs\Bankable;
 
