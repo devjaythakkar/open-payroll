@@ -46,7 +46,7 @@ class EarningController extends Controller
             'is_locked' => false,
         ]);
 
-        swal()->success('Setting', 'You have successfully create a earning type.');
+        // swal()->success('Setting', 'You have successfully create a earning type.');
 
         return redirect()->route('open-payroll.setting.index');
     }
@@ -96,7 +96,7 @@ class EarningController extends Controller
             'is_locked' => false,
         ]);
 
-        swal()->success('Setting', 'You have successfully update a earning type.');
+        // swal()->success('Setting', 'You have successfully update a earning type.');
 
         return redirect()->route('open-payroll.setting.index');
     }
@@ -112,7 +112,7 @@ class EarningController extends Controller
     {
         EarningType::whereId($id)->delete();
 
-        swal()->success('Setting', 'You have successfully delete a earning type.');
+        // swal()->success('Setting', 'You have successfully delete a earning type.');
 
         return redirect()->route('open-payroll.setting.index');
     }

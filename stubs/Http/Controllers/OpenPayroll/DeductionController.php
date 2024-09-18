@@ -56,7 +56,7 @@ class DeductionController extends Controller
             'amount'            => money()->toMachine($request->amount),
         ]);
 
-        swal()->success('Deduction', 'You have successfully added new earning.');
+        // swal()->success('Deduction', 'You have successfully added new earning.');
 
         return redirect()->route('open-payroll.payslip.show', $request->payslip);
     }
@@ -106,7 +106,7 @@ class DeductionController extends Controller
     {
         \App\Models\OpenPayroll\Deduction::hashslug($id)->delete();
 
-        swal()->success('Deduction', 'You have successfully delete an earning.');
+        // swal()->success('Deduction', 'You have successfully delete an earning.');
 
         return back();
     }

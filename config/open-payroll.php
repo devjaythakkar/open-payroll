@@ -45,7 +45,7 @@ return [
     */
 
     'models' => [
-        'user'             => \App\User::class,
+        'user'             => \App\Models\User::class,
         'employee'         => \App\Models\OpenPayroll\Employee::class,
         'payroll'          => \CleaniqueCoders\OpenPayroll\Models\Payroll\Payroll::class,
         'payroll_statuses' => \CleaniqueCoders\OpenPayroll\Models\Payroll\Status::class,

@@ -56,7 +56,7 @@ class EarningController extends Controller
             'amount'          => money()->toMachine($request->amount),
         ]);
 
-        swal()->success('Earning', 'You have successfully added new earning.');
+        // swal()->success('Earning', 'You have successfully added new earning.');
 
         return redirect()->route('open-payroll.payslip.show', $request->payslip);
     }
@@ -106,7 +106,7 @@ class EarningController extends Controller
     {
         \App\Models\OpenPayroll\Earning::hashslug($id)->delete();
 
-        swal()->success('Earning', 'You have successfully delete an earning.');
+        // swal()->success('Earning', 'You have successfully delete an earning.');
 
         return back();
     }

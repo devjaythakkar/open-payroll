@@ -13,3 +13,10 @@ if (! function_exists('payslip')) {
         return \CleaniqueCoders\OpenPayroll\Processors\PayslipProcessor::make($identifier);
     }
 }
+
+if(!function_exists('getYesNoClassName')) {
+	function getYesNoClassName($value)
+	{
+		return ($value) ? 'success' : 'danger';
+	}	
+}

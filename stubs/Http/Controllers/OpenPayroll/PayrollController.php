@@ -51,7 +51,7 @@ class PayrollController extends Controller
 
         $payroll = \App\Models\OpenPayroll\Payroll::create($request->only('user_id', 'month', 'year', 'date'));
 
-        swal()->success('Payroll', 'You have successfully created a payroll.');
+        // swal()->success('Payroll', 'You have successfully created a payroll.');
 
         return redirect()->route('open-payroll.payroll.show', $payroll->hashslug);
     }
@@ -105,13 +105,13 @@ class PayrollController extends Controller
         $payroll = \App\Models\OpenPayroll\Payroll::whereHashslug($id)->firstOrFail();
 
         if ($payroll->is_locked) {
-            swal()->error('Payroll', 'You cannot delete locked payroll.');
+            // swal()->error('Payroll', 'You cannot delete locked payroll.');
 
             return redirect()->route('open-payroll.payroll.index');
         }
 
         $payroll->delete();
-        swal()->success('Payroll', 'You have successfully delete a payroll');
+        // swal()->success('Payroll', 'You have successfully delete a payroll');
 
         return redirect()->route('open-payroll.payroll.index');
     }

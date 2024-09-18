@@ -46,7 +46,7 @@ class DeductionController extends Controller
             'is_locked' => false,
         ]);
 
-        swal()->success('Setting', 'You have successfully create a deduction type.');
+        // swal()->success('Setting', 'You have successfully create a deduction type.');
 
         return redirect()->route('open-payroll.setting.index');
     }
@@ -96,7 +96,7 @@ class DeductionController extends Controller
             'is_locked' => false,
         ]);
 
-        swal()->success('Setting', 'You have successfully update a deduction type.');
+        // swal()->success('Setting', 'You have successfully update a deduction type.');
 
         return redirect()->route('open-payroll.setting.index');
     }
@@ -112,7 +112,7 @@ class DeductionController extends Controller
     {
         DeductionType::whereId($id)->delete();
 
-        swal()->success('Setting', 'You have successfully delete a deduction type.');
+        // swal()->success('Setting', 'You have successfully delete a deduction type.');
 
         return redirect()->route('open-payroll.setting.index');
     }
