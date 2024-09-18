@@ -91,7 +91,7 @@ return [
 
    'processors' => [
         'default_earning'   => \JayThakkar\OpenPayroll\Processors\Earning\BaseEarningProcessor::class,
-        'default_deduction' => \JayThakkar\OpenPayroll\Processors\Earning\BaseEarningProcessor::class,
+        'default_deduction' => \JayThakkar\OpenPayroll\Processors\Deduction\BaseDeductionProcessor::class,
         'earnings'          => [
             // 'Basic'     => \JayThakkar\OpenPayroll\Processors\Earning\BasicEarningProcessor::class,
             // 'Overtime'  => \JayThakkar\OpenPayroll\Processors\Earning\OvertimeEarningProcessor::class,
