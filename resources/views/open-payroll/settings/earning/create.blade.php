@@ -26,7 +26,7 @@
 
                         @if(isset($type) && $type->id)
                             <input type="hidden" name="id" id="id" value="{{ $type->id }}">
-                            @method('UPDATE')
+                            @method('PUT')
                         @endif
 
                         <div class="form-group">
