@@ -1,8 +1,8 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll\Tests\Traits;
+namespace JayThakkar\OpenPayroll\Tests\Traits;
 
-use CleaniqueCoders\OpenPayroll\Models\Earning\Type as EarningType;
+use JayThakkar\OpenPayroll\Models\Earning\Type as EarningType;
 
 trait EarningTrait
 {
@@ -27,7 +27,7 @@ trait EarningTrait
                 'name'            => $type->name,
                 'description'     => $type->description,
                 'amount'          => 100000,
-            ], \CleaniqueCoders\OpenPayroll\Models\Earning\Earning::class);
+            ], \JayThakkar\OpenPayroll\Models\Earning\Earning::class);
         }
     }
 }

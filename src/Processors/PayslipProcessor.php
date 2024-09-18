@@ -1,8 +1,8 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll\Processors;
+namespace JayThakkar\OpenPayroll\Processors;
 
-use CleaniqueCoders\OpenPayroll\Contracts\CalculateContract;
+use JayThakkar\OpenPayroll\Contracts\CalculateContract;
 use Illuminate\Support\Str;
 
 class PayslipProcessor implements CalculateContract

@@ -1,6 +1,6 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll\Tests;
+namespace JayThakkar\OpenPayroll\Tests;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 

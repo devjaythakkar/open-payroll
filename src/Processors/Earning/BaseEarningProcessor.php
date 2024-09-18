@@ -1,9 +1,9 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll\Processors\Earning;
+namespace JayThakkar\OpenPayroll\Processors\Earning;
 
-use CleaniqueCoders\OpenPayroll\Contracts\CalculateContract;
-use CleaniqueCoders\OpenPayroll\Traits\MakeInstance;
+use JayThakkar\OpenPayroll\Contracts\CalculateContract;
+use JayThakkar\OpenPayroll\Traits\MakeInstance;
 
 class BaseEarningProcessor implements CalculateContract
 {

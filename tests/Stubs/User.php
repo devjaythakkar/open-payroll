@@ -1,6 +1,6 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll\Tests\Stubs;
+namespace JayThakkar\OpenPayroll\Tests\Stubs;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;

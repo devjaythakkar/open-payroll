@@ -2,7 +2,7 @@
 
 namespace App\Models\OpenPayroll;
 
-use CleaniqueCoders\OpenPayroll\Models\Payslip\Payslip as OPPayslip;
+use JayThakkar\OpenPayroll\Models\Payslip\Payslip as OPPayslip;
 
 class Payslip extends OPPayslip
 {

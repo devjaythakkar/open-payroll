@@ -1,6 +1,6 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll\Tests\Stubs\Providers;
+namespace JayThakkar\OpenPayroll\Tests\Stubs\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -11,7 +11,7 @@ class TestServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        \CleaniqueCoders\OpenPayroll\OpenPayroll::routes();
+        \JayThakkar\OpenPayroll\OpenPayroll::routes();
     }
 
     /**

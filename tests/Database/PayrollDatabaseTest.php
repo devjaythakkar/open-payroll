@@ -1,9 +1,9 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll\Tests\Database;
+namespace JayThakkar\OpenPayroll\Tests\Database;
 
-use CleaniqueCoders\OpenPayroll\Tests\TestCase;
-use CleaniqueCoders\OpenPayroll\Tests\Traits\PayrollTrait;
+use JayThakkar\OpenPayroll\Tests\TestCase;
+use JayThakkar\OpenPayroll\Tests\Traits\PayrollTrait;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Str;
 

@@ -5,4 +5,4 @@
 |--------------------------------------------------------------------------
 */
 
-\CleaniqueCoders\OpenPayroll\OpenPayroll::routes();
+\JayThakkar\OpenPayroll\OpenPayroll::routes();

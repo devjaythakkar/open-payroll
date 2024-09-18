@@ -1,6 +1,6 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll\Tests\Traits;
+namespace JayThakkar\OpenPayroll\Tests\Traits;
 
 trait UserTrait
 {

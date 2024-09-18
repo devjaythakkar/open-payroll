@@ -1,11 +1,11 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll\Traits;
+namespace JayThakkar\OpenPayroll\Traits;
 
-use CleaniqueCoders\OpenPayroll\Models\Deduction\Type as DeductionType;
-use CleaniqueCoders\OpenPayroll\Models\Earning\Type as EarningType;
-use CleaniqueCoders\OpenPayroll\Models\Payroll\Status as PayrollStatus;
-use CleaniqueCoders\OpenPayroll\Models\Payslip\Status as PayslipStatus;
+use JayThakkar\OpenPayroll\Models\Deduction\Type as DeductionType;
+use JayThakkar\OpenPayroll\Models\Earning\Type as EarningType;
+use JayThakkar\OpenPayroll\Models\Payroll\Status as PayrollStatus;
+use JayThakkar\OpenPayroll\Models\Payslip\Status as PayslipStatus;
 use Illuminate\Support\Str;
 
 trait ReferenceTrait

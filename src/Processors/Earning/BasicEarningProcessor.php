@@ -1,6 +1,6 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll\Processors\Earning;
+namespace JayThakkar\OpenPayroll\Processors\Earning;
 
 class BasicEarningProcessor extends BaseEarningProcessor
 {

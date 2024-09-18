@@ -1,9 +1,9 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll\Tests\Processor;
+namespace JayThakkar\OpenPayroll\Tests\Processor;
 
-use CleaniqueCoders\OpenPayroll\Tests\TestCase;
-use CleaniqueCoders\OpenPayroll\Tests\Traits\PayrollTrait;
+use JayThakkar\OpenPayroll\Tests\TestCase;
+use JayThakkar\OpenPayroll\Tests\Traits\PayrollTrait;
 
 class PayslipProcessor extends TestCase
 {

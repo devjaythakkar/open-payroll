@@ -1,8 +1,8 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll\Tests\Traits;
+namespace JayThakkar\OpenPayroll\Tests\Traits;
 
-use CleaniqueCoders\OpenPayroll\Models\Deduction\Type as DeductionType;
+use JayThakkar\OpenPayroll\Models\Deduction\Type as DeductionType;
 
 trait DeductionTrait
 {
@@ -27,7 +27,7 @@ trait DeductionTrait
                 'name'              => $type->name,
                 'description'       => $type->description,
                 'amount'            => 100000,
-            ], \CleaniqueCoders\OpenPayroll\Models\Deduction\Deduction::class);
+            ], \JayThakkar\OpenPayroll\Models\Deduction\Deduction::class);
         }
     }
 }

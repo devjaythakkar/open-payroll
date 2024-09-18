@@ -1,8 +1,8 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll\Tests\Http;
+namespace JayThakkar\OpenPayroll\Tests\Http;
 
-use CleaniqueCoders\OpenPayroll\Tests\TestCase;
+use JayThakkar\OpenPayroll\Tests\TestCase;
 use Illuminate\Routing\Router;
 
 class RouteTest extends TestCase

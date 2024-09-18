@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "CleaniqueCoders\\OpenPayroll\\": "src/"
+            "JayThakkar\\OpenPayroll\\": "src/"
         },
         "classmap": [
             "database/seeds",
@@ -23,16 +23,16 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "CleaniqueCoders\\OpenPayroll\\Tests\\": "tests/"
+            "JayThakkar\\OpenPayroll\\Tests\\": "tests/"
         }
     },
     "require": {
         "php": ">=8.1",
-        "cleaniquecoders/blueprint-macro": "^5.2",
-        "cleaniquecoders/laravel-helper": "^4.2",
-        "cleaniquecoders/laravel-observers": "^4.2",
+        "JayThakkar/blueprint-macro": "^5.2",
+        "JayThakkar/laravel-helper": "^4.2",
+        "JayThakkar/laravel-observers": "^4.2",
         "devjaythakkar/money-wrapper": "dev-master",
-        "cleaniquecoders/profile": "^5.0",
+        "JayThakkar/profile": "^5.0",
         "illuminate/support": "~10.0"
     },
     "require-dev": {
@@ -43,10 +43,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "CleaniqueCoders\\OpenPayroll\\OpenPayrollServiceProvider"
+                "JayThakkar\\OpenPayroll\\OpenPayrollServiceProvider"
             ],
             "aliases": {
-                "OpenPayroll": "CleaniqueCoders\\OpenPayroll\\OpenPayrollFacade"
+                "OpenPayroll": "JayThakkar\\OpenPayroll\\OpenPayrollFacade"
             }
         }
     },

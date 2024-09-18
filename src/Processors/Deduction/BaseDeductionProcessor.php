@@ -1,9 +1,9 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll\Processors\Deduction;
+namespace JayThakkar\OpenPayroll\Processors\Deduction;
 
-use CleaniqueCoders\OpenPayroll\Contracts\CalculateContract;
-use CleaniqueCoders\OpenPayroll\Traits\MakeInstance;
+use JayThakkar\OpenPayroll\Contracts\CalculateContract;
+use JayThakkar\OpenPayroll\Traits\MakeInstance;
 
 class BaseDeductionProcessor implements CalculateContract
 {

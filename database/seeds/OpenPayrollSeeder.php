@@ -1,6 +1,6 @@
 <?php
 
-use CleaniqueCoders\OpenPayroll\Traits\ReferenceTrait;
+use JayThakkar\OpenPayroll\Traits\ReferenceTrait;
 use Illuminate\Database\Seeder;
 
 class OpenPayrollSeeder extends Seeder

@@ -1,6 +1,6 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll\Traits;
+namespace JayThakkar\OpenPayroll\Traits;
 
 trait MakeInstance
 {

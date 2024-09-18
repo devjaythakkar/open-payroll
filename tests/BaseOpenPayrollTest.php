@@ -1,6 +1,6 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll\Tests;
+namespace JayThakkar\OpenPayroll\Tests;
 
 class BaseOpenPayrollTest extends TestCase
 {
@@ -25,26 +25,26 @@ class BaseOpenPayrollTest extends TestCase
     /** @test */
     public function it_has_payroll_processor()
     {
-        $this->assertHasClass(\CleaniqueCoders\OpenPayroll\Processors\PayrollProcessor::class);
+        $this->assertHasClass(\JayThakkar\OpenPayroll\Processors\PayrollProcessor::class);
     }
 
     /** @test */
     public function it_has_payslip_processor()
     {
-        $this->assertHasClass(\CleaniqueCoders\OpenPayroll\Processors\PayslipProcessor::class);
+        $this->assertHasClass(\JayThakkar\OpenPayroll\Processors\PayslipProcessor::class);
     }
 
     /** @test */
     public function it_has_model()
     {
-        $this->assertHasClass(\CleaniqueCoders\OpenPayroll\Models\Payroll\Payroll::class);
-        $this->assertHasClass(\CleaniqueCoders\OpenPayroll\Models\Payroll\Status::class);
-        $this->assertHasClass(\CleaniqueCoders\OpenPayroll\Models\Payslip\Payslip::class);
-        $this->assertHasClass(\CleaniqueCoders\OpenPayroll\Models\Payslip\Status::class);
-        $this->assertHasClass(\CleaniqueCoders\OpenPayroll\Models\Deduction\Deduction::class);
-        $this->assertHasClass(\CleaniqueCoders\OpenPayroll\Models\Deduction\Type::class);
-        $this->assertHasClass(\CleaniqueCoders\OpenPayroll\Models\Earning\Earning::class);
-        $this->assertHasClass(\CleaniqueCoders\OpenPayroll\Models\Earning\Type::class);
+        $this->assertHasClass(\JayThakkar\OpenPayroll\Models\Payroll\Payroll::class);
+        $this->assertHasClass(\JayThakkar\OpenPayroll\Models\Payroll\Status::class);
+        $this->assertHasClass(\JayThakkar\OpenPayroll\Models\Payslip\Payslip::class);
+        $this->assertHasClass(\JayThakkar\OpenPayroll\Models\Payslip\Status::class);
+        $this->assertHasClass(\JayThakkar\OpenPayroll\Models\Deduction\Deduction::class);
+        $this->assertHasClass(\JayThakkar\OpenPayroll\Models\Deduction\Type::class);
+        $this->assertHasClass(\JayThakkar\OpenPayroll\Models\Earning\Earning::class);
+        $this->assertHasClass(\JayThakkar\OpenPayroll\Models\Earning\Type::class);
     }
 
     /** @test */

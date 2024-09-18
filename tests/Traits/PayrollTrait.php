@@ -1,8 +1,8 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll\Tests\Traits;
+namespace JayThakkar\OpenPayroll\Tests\Traits;
 
-use CleaniqueCoders\OpenPayroll\Models\Payroll\Payroll;
+use JayThakkar\OpenPayroll\Models\Payroll\Payroll;
 
 trait PayrollTrait
 {

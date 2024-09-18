@@ -1,6 +1,6 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll\Console\Commands;
+namespace JayThakkar\OpenPayroll\Console\Commands;
 
 use Illuminate\Console\Command;
 

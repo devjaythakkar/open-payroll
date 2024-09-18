@@ -1,6 +1,6 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll;
+namespace JayThakkar\OpenPayroll;
 
 use Illuminate\Contracts\Routing\Registrar as Router;
 use Illuminate\Support\Facades\Route;

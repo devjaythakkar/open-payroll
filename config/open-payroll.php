@@ -47,14 +47,14 @@ return [
     'models' => [
         'user'             => \App\Models\User::class,
         'employee'         => \App\Models\OpenPayroll\Employee::class,
-        'payroll'          => \CleaniqueCoders\OpenPayroll\Models\Payroll\Payroll::class,
-        'payroll_statuses' => \CleaniqueCoders\OpenPayroll\Models\Payroll\Status::class,
-        'payslip'          => \CleaniqueCoders\OpenPayroll\Models\Payslip\Payslip::class,
-        'payslip_statuses' => \CleaniqueCoders\OpenPayroll\Models\Payslip\Status::class,
-        'deduction'        => \CleaniqueCoders\OpenPayroll\Models\Deduction\Deduction::class,
-        'deduction_types'  => \CleaniqueCoders\OpenPayroll\Models\Deduction\Type::class,
-        'earning'          => \CleaniqueCoders\OpenPayroll\Models\Earning\Earning::class,
-        'earning_types'    => \CleaniqueCoders\OpenPayroll\Models\Earning\Type::class,
+        'payroll'          => \JayThakkar\OpenPayroll\Models\Payroll\Payroll::class,
+        'payroll_statuses' => \JayThakkar\OpenPayroll\Models\Payroll\Status::class,
+        'payslip'          => \JayThakkar\OpenPayroll\Models\Payslip\Payslip::class,
+        'payslip_statuses' => \JayThakkar\OpenPayroll\Models\Payslip\Status::class,
+        'deduction'        => \JayThakkar\OpenPayroll\Models\Deduction\Deduction::class,
+        'deduction_types'  => \JayThakkar\OpenPayroll\Models\Deduction\Type::class,
+        'earning'          => \JayThakkar\OpenPayroll\Models\Earning\Earning::class,
+        'earning_types'    => \JayThakkar\OpenPayroll\Models\Earning\Type::class,
     ],
 
     /*
@@ -90,19 +90,19 @@ return [
     */
 
    'processors' => [
-        'default_earning'   => \CleaniqueCoders\OpenPayroll\Processors\Earning\BaseEarningProcessor::class,
-        'default_deduction' => \CleaniqueCoders\OpenPayroll\Processors\Earning\BaseEarningProcessor::class,
+        'default_earning'   => \JayThakkar\OpenPayroll\Processors\Earning\BaseEarningProcessor::class,
+        'default_deduction' => \JayThakkar\OpenPayroll\Processors\Earning\BaseEarningProcessor::class,
         'earnings'          => [
-            // 'Basic'     => \CleaniqueCoders\OpenPayroll\Processors\Earning\BasicEarningProcessor::class,
-            // 'Overtime'  => \CleaniqueCoders\OpenPayroll\Processors\Earning\OvertimeEarningProcessor::class,
-            // 'Allowance' => \CleaniqueCoders\OpenPayroll\Processors\Earning\AllowanceEarningProcessor::class,
-            // 'Bonus'     => \CleaniqueCoders\OpenPayroll\Processors\Earning\BonusEarningProcessor::class,
-            // 'Claim'     => \CleaniqueCoders\OpenPayroll\Processors\Earning\ClaimEarningProcessor::class,
-            // 'Other'     => \CleaniqueCoders\OpenPayroll\Processors\Earning\OtherEarningProcessor::class,
+            // 'Basic'     => \JayThakkar\OpenPayroll\Processors\Earning\BasicEarningProcessor::class,
+            // 'Overtime'  => \JayThakkar\OpenPayroll\Processors\Earning\OvertimeEarningProcessor::class,
+            // 'Allowance' => \JayThakkar\OpenPayroll\Processors\Earning\AllowanceEarningProcessor::class,
+            // 'Bonus'     => \JayThakkar\OpenPayroll\Processors\Earning\BonusEarningProcessor::class,
+            // 'Claim'     => \JayThakkar\OpenPayroll\Processors\Earning\ClaimEarningProcessor::class,
+            // 'Other'     => \JayThakkar\OpenPayroll\Processors\Earning\OtherEarningProcessor::class,
         ],
         'deductions' => [
-            // 'Loan'      => \CleaniqueCoders\OpenPayroll\Processors\Deduction\LoanProcessor::class,
-            // 'IncomeTax' => \CleaniqueCoders\OpenPayroll\Processors\Deduction\IncomeTaxProcessor::class,
+            // 'Loan'      => \JayThakkar\OpenPayroll\Processors\Deduction\LoanProcessor::class,
+            // 'IncomeTax' => \JayThakkar\OpenPayroll\Processors\Deduction\IncomeTaxProcessor::class,
         ],
    ],
 ];

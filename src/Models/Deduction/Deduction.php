@@ -1,6 +1,6 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll\Models\Deduction;
+namespace JayThakkar\OpenPayroll\Models\Deduction;
 
 use Illuminate\Database\Eloquent\Model;
 

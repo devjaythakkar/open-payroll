@@ -1,8 +1,8 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll\Tests;
+namespace JayThakkar\OpenPayroll\Tests;
 
-use CleaniqueCoders\OpenPayroll\Traits\ReferenceTrait;
+use JayThakkar\OpenPayroll\Traits\ReferenceTrait;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Schema;
 
@@ -66,11 +66,11 @@ class TestCase extends \Orchestra\Testbench\TestCase
     protected function getPackageProviders($app)
     {
         return [
-            \CleaniqueCoders\OpenPayroll\OpenPayrollServiceProvider::class,
-            \CleaniqueCoders\LaravelObservers\LaravelObserversServiceProvider::class,
-            \CleaniqueCoders\LaravelHelper\LaravelHelperServiceProvider::class,
-            \CleaniqueCoders\Blueprint\Macro\BlueprintMacroServiceProvider::class,
-            \CleaniqueCoders\OpenPayroll\Tests\Stubs\Providers\TestServiceProvider::class,
+            \JayThakkar\OpenPayroll\OpenPayrollServiceProvider::class,
+            \JayThakkar\LaravelObservers\LaravelObserversServiceProvider::class,
+            \JayThakkar\LaravelHelper\LaravelHelperServiceProvider::class,
+            \JayThakkar\Blueprint\Macro\BlueprintMacroServiceProvider::class,
+            \JayThakkar\OpenPayroll\Tests\Stubs\Providers\TestServiceProvider::class,
         ];
     }
 

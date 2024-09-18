@@ -3,8 +3,8 @@
 namespace App\Models\OpenPayroll;
 
 use App\User;
-use CleaniqueCoders\Profile\Traits\HasProfile;
-use CleaniqueCoders\Profile\Traits\Morphs\Bankable;
+use JayThakkar\Profile\Traits\HasProfile;
+use JayThakkar\Profile\Traits\Morphs\Bankable;
 
 class Employee extends User
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll\Console\Commands;
+namespace JayThakkar\OpenPayroll\Console\Commands;
 
 use Illuminate\Console\Command;
 
@@ -36,7 +36,7 @@ class InstallCommand extends Command
     public function handle()
     {
         $this->call('vendor:publish', [
-            '--provider' => 'CleaniqueCoders\OpenPayroll\OpenPayrollServiceProvider',
+            '--provider' => 'JayThakkar\OpenPayroll\OpenPayrollServiceProvider',
             '--force'    => true,
         ]);
 

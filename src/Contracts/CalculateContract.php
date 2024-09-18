@@ -1,6 +1,6 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll\Contracts;
+namespace JayThakkar\OpenPayroll\Contracts;
 
 interface CalculateContract
 {

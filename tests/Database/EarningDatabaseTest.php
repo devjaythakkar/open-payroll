@@ -1,9 +1,9 @@
 <?php
 
-namespace CleaniqueCoders\OpenPayroll\Tests\Database;
+namespace JayThakkar\OpenPayroll\Tests\Database;
 
-use CleaniqueCoders\OpenPayroll\Tests\TestCase;
-use CleaniqueCoders\OpenPayroll\Tests\Traits\PayrollTrait;
+use JayThakkar\OpenPayroll\Tests\TestCase;
+use JayThakkar\OpenPayroll\Tests\Traits\PayrollTrait;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Str;
 
@@ -56,7 +56,7 @@ class EarningDatabaseTest extends TestCase
                 'name'            => $type->name,
                 'description'     => 'Earning for ' . $type->name,
                 'amount'          => 10000,
-            ], \CleaniqueCoders\OpenPayroll\Models\Earning\Earning::class);
+            ], \JayThakkar\OpenPayroll\Models\Earning\Earning::class);
         }
 
         foreach ($earning_types as $type) {
