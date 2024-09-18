@@ -1,4 +1,4 @@
-@extends('layouts.open-payroll')
+@extends('open-payroll.layouts.open-payroll')
 
 @section('content')
 <div class="container">
