@@ -1,12 +1,12 @@
 {
-    "name": "lutpiero/open-payroll",
+    "name": "devjaythakkar/open-payroll",
     "description": "Built with Laravel Standalone Package Creator",
     "keywords": ["package", "laravel"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Nasrul Hazim",
-            "email": "nasrulhazim.m@gmail.com"
+            "name": "Jay Thakkar",
+            "email": "jaythakkar381@gmail.com"
         }
     ],
     "autoload": {
