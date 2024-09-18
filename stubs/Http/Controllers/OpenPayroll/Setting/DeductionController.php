@@ -5,6 +5,7 @@ namespace App\Http\Controllers\OpenPayroll\Setting;
 use App\Http\Controllers\Controller;
 use App\Models\OpenPayroll\DeductionType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class DeductionController extends Controller
 {
@@ -42,7 +43,7 @@ class DeductionController extends Controller
 
         DeductionType::create([
             'name'      => $request->name,
-            'code'      => kebab_case($request->name, ''),
+            'code'      => Str::kebab_case($request->name, ''),
             'is_locked' => false,
         ]);
 
@@ -92,7 +93,7 @@ class DeductionController extends Controller
 
         DeductionType::whereId($id)->update([
             'name'      => $request->name,
-            'code'      => kebab_case($request->name, ''),
+            'code'      => Str::kebab_case($request->name, ''),
             'is_locked' => false,
         ]);
 

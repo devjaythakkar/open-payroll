@@ -5,6 +5,7 @@ namespace App\Http\Controllers\OpenPayroll\Setting;
 use App\Http\Controllers\Controller;
 use App\Models\OpenPayroll\EarningType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class EarningController extends Controller
 {
@@ -42,7 +43,7 @@ class EarningController extends Controller
 
         EarningType::create([
             'name'      => $request->name,
-            'code'      => kebab_case($request->name, ''),
+            'code'      => Str::kebab_case($request->name, ''),
             'is_locked' => false,
         ]);
 
@@ -92,7 +93,7 @@ class EarningController extends Controller
 
         EarningType::whereId($id)->update([
             'name'      => $request->name,
-            'code'      => kebab_case($request->name, ''),
+            'code'      => Str::kebab_case($request->name, ''),
             'is_locked' => false,
         ]);
 
