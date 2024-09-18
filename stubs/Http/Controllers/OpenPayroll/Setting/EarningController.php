@@ -43,7 +43,7 @@ class EarningController extends Controller
 
         EarningType::create([
             'name'      => $request->name,
-            'code'      => Str::kebab_case($request->name, ''),
+            'code'      => Str::kebab($request->name),
             'is_locked' => false,
         ]);
 
@@ -93,7 +93,7 @@ class EarningController extends Controller
 
         EarningType::whereId($id)->update([
             'name'      => $request->name,
-            'code'      => Str::kebab_case($request->name, ''),
+            'code'      => Str::kebab($request->name),
             'is_locked' => false,
         ]);
 
