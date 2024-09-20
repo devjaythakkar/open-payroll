@@ -20,7 +20,7 @@ class OpenPayroll
         $defaultOptions = [
             'prefix'    => 'open-payroll',
             'as'        => 'open-payroll.',
-            'namespace' => 'OpenPayroll',
+            'namespace' => 'App\Http\Controllers\OpenPayroll',
         ];
         $options = array_merge($defaultOptions, $options);
         Route::group($options, function($router) use ($callback) {

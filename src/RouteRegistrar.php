@@ -36,7 +36,8 @@ class RouteRegistrar
             $router->resource('deduction', 'DeductionController');
             $router->get('recalculate/payslip/{id}', 'RecalculatePayslipController@__invoke')->name('payslip.recalculate');
             $router->get('recalculate/payroll/{id}', 'RecalculatePayrollController@__invoke')->name('payroll.recalculate');
-
+            $router->get('open-payroll/payslip/download/{id}', 'PayslipController@download')->name('payslip.download');
+            $router->get('open-payroll/payroll/export/{id}', 'PayrollController@export')->name('payroll.export');
             $router->get('setting', 'SettingController@__invoke')->name('setting.index');
 
             $this->router->group([

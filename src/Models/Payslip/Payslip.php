@@ -27,7 +27,7 @@ class Payslip extends Model
 
     public function employee()
     {
-        return $this->belongsTo(config('open-payroll.models.employee'), config('open-payroll.models.employee_fk', 'user_id'));
+        return $this->belongsTo(config('open-payroll.models.employee'), config('open-payroll.models.employee_fk', 'user_id'), 'user_id');
     }
 
     public function earnings()
