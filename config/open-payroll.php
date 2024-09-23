@@ -15,8 +15,11 @@ return [
 
     'seeds' => [
         'deduction_types' => [
-            'Loan',
-            'Income Tax',
+            'Unpaid Leave',
+            'TDS',
+            'ESIC',
+            'PF (Provident Fund)',
+            'PT (Professional Tax)',
         ],
         'earning_types' => [
             'Basic',
@@ -77,6 +80,43 @@ return [
             'earning_types',
             'deduction_types',
         ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Open Payroll Codes
+    |--------------------------------------------------------------------------
+    |
+    | These codes are used in the calculation of the deduction
+    |
+    */
+
+    'codes' => [
+        'unpaid_leave' => 'unpaid-leave', // Employee unpaid leave code
+        'TDS' => 't-d-s', // Employee TDS
+        'ESIC' => 'e-s-i-c', // Employee ESIC
+        'PF' => 'p-f', // Employee PF (Provident Fund)
+        'PT' => 'p-t', // Professional Tax
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Open Payroll Deduction Calculation
+    |--------------------------------------------------------------------------
+    |
+    | Based on the below deduction, we calculate the employees final salary
+    |
+    */
+
+    'calculation' => [
+        'pf_payable_salary_is_greater_than' => 15000, // Cut the pf amount if the total payable amount is grater than this
+        'pt_payable_salary_is_greater_than' => 12000, // Cut the pt amount if the total payable amount is grater than this
+        'tds' => 0.10, // 10%
+        'employeer_esic' => 0.0325, // 3.25%
+        'employee_esic' => 0.0075, // 0.75%
+        'employeer_pf' => 0.125, // 12.50%
+        'employee_pf' => 0.12, // 12.00%
+        'pt' => 200, // Professional Tax. Fixed 200 rupees
     ],
 
     /*
