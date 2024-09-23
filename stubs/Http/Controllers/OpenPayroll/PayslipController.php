@@ -117,4 +117,23 @@ class PayslipController extends Controller
     public function destroy($id)
     {
     }
+
+    /**
+     * Download the payslip.
+     *
+     * @param int $id
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function download($id)
+    {
+        $payslip = \App\Models\OpenPayroll\Payslip::whereHashslug($id)->firstOrFail();
+
+        $employee = $payslip->employee;
+
+        $companyName = 'Give the company name';
+        // $companyName = \App\Models\Setting::where('key', '=', 'Company_Name')->first()->value;
+
+        return view('open-payroll.payslip.pdf', compact('payslip', 'employee', 'companyName'));
+    }
 }

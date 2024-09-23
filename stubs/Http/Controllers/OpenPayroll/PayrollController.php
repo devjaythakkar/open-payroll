@@ -4,6 +4,7 @@ namespace App\Http\Controllers\OpenPayroll;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PayrollController extends Controller
 {
@@ -114,5 +115,21 @@ class PayrollController extends Controller
         // swal()->success('Payroll', 'You have successfully delete a payroll');
 
         return redirect()->route('open-payroll.payroll.index');
+    }
+
+    /**
+     * Export the payroll in excel.
+     *
+     * @param int $id
+     *
+     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
+     */
+    public function export($id)
+    {
+        $name = 'payroll_' . date('Y-m-d i:h:s');
+        $data = Excel::download(new \App\Exports\PayrollExport($id), $name . '.xlsx');
+        ob_end_clean();
+
+        return $data;
     }
 }
