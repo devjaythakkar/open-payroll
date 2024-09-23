@@ -67,7 +67,7 @@ class CreatePayrollCommand extends Command
         // Payroll generation logic
         $payroll = new \App\Models\OpenPayroll\Payroll();
 
-        $payroll->user_id = auth()->id();
+        $payroll->user_id = 1;
 
         // Set the month and year separately
         $payroll->month = $date->format('n'); // 1-12 for month
