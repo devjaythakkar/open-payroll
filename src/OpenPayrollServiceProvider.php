@@ -42,7 +42,9 @@ class OpenPayrollServiceProvider extends ServiceProvider
          */
         $this->publishes([
             __DIR__ . '/../stubs/Models'           => app_path('Models'),
+            __DIR__ . '/../stubs/Exports' => app_path('Exports'),
             __DIR__ . '/../stubs/Http/Controllers' => app_path('Http/Controllers'),
+            __DIR__ . '/../stubs/Jobs' => app_path('Jobs'),
         ], 'open-payroll-app');
 
         /*

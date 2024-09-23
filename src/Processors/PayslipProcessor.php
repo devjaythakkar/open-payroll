@@ -2,6 +2,7 @@
 
 namespace JayThakkar\OpenPayroll\Processors;
 
+use Carbon\Carbon;
 use JayThakkar\OpenPayroll\Contracts\CalculateContract;
 use Illuminate\Support\Str;
 
@@ -14,12 +15,11 @@ class PayslipProcessor implements CalculateContract
         if (! is_null($identifier)) {
             if (is_string($identifier) || is_int($identifier)) {
                 $this->payslip = config('open-payroll.models.payslip')::query()
-                    ->with('earnings', 'deductions', 'payroll', 'employee', 'employee.salary')
+                    ->with('earnings', 'deductions', 'payroll', 'employee')
                     ->whereId($identifier)
                     ->orWhere('hashslug', $identifier)
-                    ->firstOrFail();
+                    ->first();
             }
-
             if (is_object($identifier)) {
                 $this->payslip($identifier);
             }
@@ -41,13 +41,33 @@ class PayslipProcessor implements CalculateContract
     public function calculate()
     {
         if ($this->payslip) {
+            $payroll = $this->payslip->payroll;
+            $month = Carbon::parse($payroll->year . '-' . $payroll->month . '-1')->format('M');
+            $year = date('Y', strtotime($payroll->year));
+            $month_digit = Carbon::parse($payroll->year . '-' . $payroll->month . '-1')->format('m');
+            $carbon_date = Carbon::createFromDate($year, $month_digit, 1);
+            $total_days_in_month = $carbon_date->daysInMonth;
+            $requested_date = $year.'-'.$month.'-'.$total_days_in_month;
+    
             $employee   = $this->payslip->employee;
-            $salary     = $employee->salary;
+            
+            // Retrive the employee salary.
+            // $increment  = $employee->increment_details()
+            //     ->where('increment_date', '<=', date('Y-m-d', strtotime($requested_date)))
+            //     ->orderBy('increment_date', 'desc')
+            //     ->first();
+            // $salary     = $increment->basic_salary;
+
+            $salary = $employee->salary;
             $payroll    = $this->payslip->payroll;
             $earnings   = $this->payslip->earnings;
             $deductions = $this->payslip->deductions;
 
-            $this->payslip->basic_salary = $gross_salary = $net_salary = $salary->amount;
+            $this->payslip->basic_salary = $gross_salary = $salary * 100;
+            $class = config('open-payroll.processors.default_earning');
+            if (class_exists($class)) {
+                $gross_salary += $class::make($this->payslip)->calculate();
+            }
             foreach ($earnings as $earning) {
                 $class = config('open-payroll.processors.earnings.' . Str::studly($earning->type->name));
                 if (class_exists($class)) {
@@ -58,6 +78,10 @@ class PayslipProcessor implements CalculateContract
             }
 
             $deduction_amount = 0;
+            $class = config('open-payroll.processors.default_deduction');
+            if (class_exists($class)) {
+                $deduction_amount += $class::make($this->payslip)->calculate();
+            }
             foreach ($deductions as $deduction) {
                 $class = config('open-payroll.processors.deductions.' . Str::studly($deduction->type->name));
                 if (class_exists($class)) {

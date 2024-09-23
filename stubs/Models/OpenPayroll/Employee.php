@@ -2,15 +2,15 @@
 
 namespace App\Models\OpenPayroll;
 
-use App\Models\User;
+use App\Models\Employee as normalEmployee;
 use CleaniqueCoders\Profile\Traits\HasProfile;
 use CleaniqueCoders\Profile\Traits\Morphs\Bankable;
 
-class Employee extends User
+class Employee extends normalEmployee
 {
     use HasProfile, Bankable;
 
-    protected $table = 'users';
+    protected $table = 'employees';
 
     public function salary()
     {
