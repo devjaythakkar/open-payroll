@@ -79,7 +79,7 @@ class CreatePayrollCommand extends Command
         // Save the payroll
         $payroll->save();
 
-        $employees = \App\Models\OpenPayroll\Employee::all();
+        $employees = \App\Models\Employee::all();
         \App\Jobs\PayslipJob::dispatch($employees, $payroll);
 
         $this->info("Payroll is created. Now, we are creating the payslips for each employees and calculate the base earnings and deductions.");

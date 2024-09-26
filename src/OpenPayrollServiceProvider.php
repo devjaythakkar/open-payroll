@@ -56,6 +56,7 @@ class OpenPayrollServiceProvider extends ServiceProvider
                 Console\Commands\InstallCommand::class,
                 Console\Commands\SeedOpenPayrollReferenceCommand::class,
                 Console\Commands\SeedDemoDataCommand::class,
+                Console\Commands\CreatePayrollCommand::class,
             ]);
         }
     }

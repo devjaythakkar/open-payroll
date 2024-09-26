@@ -32,6 +32,9 @@
 							<a href="{{ route('open-payroll.payslip.create', ['payroll' => $payroll->hashslug]) }}" class="btn btn-default border border-primary float-right">
 								{{ __('Create Payslips') }}
 							</a>
+							<a href="{{ route('open-payroll.payroll.export', ['id' => $payroll->hashslug]) }}" class="btn btn-default border border-primary float-right">
+								{{ __('Export') }}
+							</a>
 						</h4>
 					</div>
 					<div class="card-body">
@@ -49,24 +52,25 @@
 							</tr>
 							@forelse($payroll->payslips as $payslip)
 								<tr>
-									<td>{{ $payslip->user->name }}</td>
+									<td>{{ $payslip->employee ? $payslip->employee->first_name : '' }}</td>
 									<td class="text-center">{{ money()->toHuman($payslip->basic_salary) }}</td>
 									<td class="text-center">{{ money()->toHuman($payslip->gross_salary) }}</td>
 									<td class="text-center">{{ money()->toHuman($payslip->net_salary) }}</td>
 									<td class="text-center">
-										<span class="p-2 badge badge-{{ getYesNoClassName($payslip->is_verified) }}">{{ $payslip->is_verified ? 'Yes' : 'No' }}</span>
+										<span class="p-2 text text-{{ getYesNoClassName($payslip->is_verified) }}">{{ $payslip->is_verified ? 'Yes' : 'No' }}</span>
 									</td>
 									<td class="text-center">
-										<span class="p-2 badge badge-{{ getYesNoClassName($payslip->is_approved) }}">{{ $payslip->is_approved ? 'Yes' : 'No' }}</span>
+										<span class="p-2 text text-{{ getYesNoClassName($payslip->is_approved) }}">{{ $payslip->is_approved ? 'Yes' : 'No' }}</span>
 									</td>
 									<td class="text-center">
-										<span class="p-2 badge badge-{{ getYesNoClassName($payslip->is_locked) }}">{{ $payslip->is_locked ? 'Yes' : 'No' }}</span>
+										<span class="p-2 text text-{{ getYesNoClassName($payslip->is_locked) }}">{{ $payslip->is_locked ? 'Yes' : 'No' }}</span>
 									</td>
 									<td class="text-center">
 										<div class="btn-group">
-											<a href="{{ route('open-payroll.payslip.show', $payslip->hashslug) }}" class="btn border-primary text-primary">Details</a>
+											<a href="{{ route('open-payroll.payslip.show', $payslip->hashslug) }}" class="btn border-primary text-primary m-2">Details</a>
+											<a href="{{ route('open-payroll.payslip.download', $payslip->hashslug) }}" class="btn border-primary text-primary m-2">View</a>
 											@if(!$payslip->is_locked)
-												<div class="btn border-danger text-danger" onclick="confirmToDelete('{{ $payslip->hashslug }}')">Delete</div>
+												<div class="btn border-danger text-danger m-2" onclick="confirmToDelete('{{ $payslip->hashslug }}')">Delete</div>
 												<form id="delete-form-{{ $payslip->hashslug }}" 
 													action="{{ route('open-payroll.payslip.destroy', $payslip->hashslug) }}" 
 													method="POST" style="display: none;">

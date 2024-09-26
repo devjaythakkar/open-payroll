@@ -50,15 +50,15 @@ class PayslipProcessor implements CalculateContract
             $requested_date = $year.'-'.$month.'-'.$total_days_in_month;
     
             $employee   = $this->payslip->employee;
+            $salary = $employee->salary;
             
-            // Retrive the employee salary.
+            // Retrive the employee salary. CUSTOMCODE
             // $increment  = $employee->increment_details()
             //     ->where('increment_date', '<=', date('Y-m-d', strtotime($requested_date)))
             //     ->orderBy('increment_date', 'desc')
             //     ->first();
             // $salary     = $increment->basic_salary;
 
-            $salary = $employee->salary;
             $payroll    = $this->payslip->payroll;
             $earnings   = $this->payslip->earnings;
             $deductions = $this->payslip->deductions;

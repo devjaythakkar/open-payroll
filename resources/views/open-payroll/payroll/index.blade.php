@@ -49,9 +49,9 @@
 									<td class="text-center">{{ $payroll->date->format('l, d-M-Y') }}</td>
 									<td class="text-center">
 										<div class="btn-group">
-											<a href="{{ route('open-payroll.payroll.show', $payroll->hashslug) }}" class="btn border-primary text-primary">Details</a>
+											<a href="{{ route('open-payroll.payroll.show', $payroll->hashslug) }}" class="btn border-primary text-primary m-2">Details</a>
 											@if(!$payroll->is_locked)
-												<div class="btn border-danger text-danger" onclick="confirmToDelete('{{ $payroll->hashslug }}')">Delete</div>
+												<div class="btn border-danger text-danger m-2" onclick="confirmToDelete('{{ $payroll->hashslug }}')">Delete</div>
 												<form id="delete-form-{{ $payroll->hashslug }}" 
 													action="{{ route('open-payroll.payroll.destroy', $payroll->hashslug) }}" 
 													method="POST" style="display: none;">

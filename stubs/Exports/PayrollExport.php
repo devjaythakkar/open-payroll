@@ -35,11 +35,12 @@ class PayrollExport implements FromCollection, WithHeadings
             // $requested_date = $year."-".$month."-".$totalDaysInMonth;
 
             $presentDays = $paidLeaves = $unpaidLeaves = 0;
+            // CUSTOMCODE
             // You need to calculate the total present days, paid leave taken, unpaid leave, of the employee in payroll month and year
 
-            // $presentDays = isset($payslip->payroll) && !empty($employee) ? Utility::getPresentDaysOfEmployeeInMonth($employee->employee_code,$payslip->payroll->month, $payslip->payroll->year) : 0;
-            // $paidLeaves = !empty($employee) ? Utility::getLeaveOfEmployeeOfMonth($employee,'paid', $payslip->payroll->month, $payslip->payroll->year) : 0;
-            // $unpaidLeaves = !empty($employee) ? Utility::getLeaveOfEmployeeOfMonth($employee,'un-paid', $payslip->payroll->month, $payslip->payroll->year) : 0;
+            // $presentDays = isset($payslip->payroll) && !empty($employee) ? \App\Http\Helpers\Utility::getPresentDaysOfEmployeeInMonth($employee->employee_code,$payslip->payroll->month, $payslip->payroll->year) : 0;
+            // $paidLeaves = !empty($employee) ? \App\Http\Helpers\Utility::getLeaveOfEmployeeOfMonth($employee,'paid', $payslip->payroll->month, $payslip->payroll->year) : 0;
+            // $unpaidLeaves = !empty($employee) ? \App\Http\Helpers\Utility::getLeaveOfEmployeeOfMonth($employee,'un-paid', $payslip->payroll->month, $payslip->payroll->year) : 0;
 
             if ($presentDays == 0 && $paidLeaves == 0 && $unpaidLeaves == 0) {
                 Log::warning('You need to calculate the total present days, paid leave taken, unpaid leave, of the employee in payroll month and year');

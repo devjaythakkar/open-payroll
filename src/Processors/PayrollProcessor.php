@@ -11,7 +11,7 @@ class PayrollProcessor implements CalculateContract
     public function __construct($identifier = null)
     {
         $this->payroll = config('open-payroll.models.payroll')::query()
-            ->with('payslips', 'payslips.earnings', 'payslips.deductions', 'payslips.employee', 'payslips.employee.salary')
+            ->with('payslips', 'payslips.earnings', 'payslips.deductions', 'payslips.employee')
             ->findByHashSlugOrId($identifier);
     }
 

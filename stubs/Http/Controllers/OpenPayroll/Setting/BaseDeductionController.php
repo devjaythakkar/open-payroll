@@ -1,6 +1,6 @@
 <?php
 
-namespace JayThakkar\OpenPayroll\Processors\Deduction;
+namespace App\Http\Controllers\OpenPayroll\Setting;
 
 use App\Models\OpenPayroll\Deduction;
 use App\Models\OpenPayroll\DeductionType;
@@ -8,7 +8,7 @@ use Carbon\Carbon;
 use JayThakkar\OpenPayroll\Contracts\CalculateContract;
 use JayThakkar\OpenPayroll\Traits\MakeInstance;
 
-class BaseDeductionProcessor implements CalculateContract
+class BaseDeductionController implements CalculateContract
 {
     use MakeInstance;
     public $payslip;

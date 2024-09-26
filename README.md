@@ -66,8 +66,8 @@ Then add the Open Payroll models to the `config/observers.php` in `\JayThakkar\L
 
 ```php
 return [
-    \JayThakkar\LaravelObservers\Observers\ReferenceObserver::class => [],
-    \JayThakkar\LaravelObservers\Observers\HashidsObserver::class   => [
+    \CleaniqueCoders\LaravelObservers\Observers\ReferenceObserver::class => [],
+    \CleaniqueCoders\LaravelObservers\Observers\HashidsObserver::class   => [
     	\App\Models\OpenPayroll\Employee::class,
     	\App\Models\OpenPayroll\Position::class,
     	\App\Models\OpenPayroll\Salary::class,
@@ -77,6 +77,7 @@ return [
     	\App\Models\OpenPayroll\Earning::class,
     	\App\Models\OpenPayroll\Deduction::class,
     ],
+	\CleaniqueCoders\LaravelObservers\Observers\UuidObserver::class => [],
 ];
 ```
 

@@ -49,7 +49,7 @@ return [
 
     'models' => [
         'user'             => \App\Models\User::class,
-        'employee'         => \App\Models\OpenPayroll\Employee::class,
+        'employee'         => \App\Models\Employee::class,
         'payroll'          => \JayThakkar\OpenPayroll\Models\Payroll\Payroll::class,
         'payroll_statuses' => \JayThakkar\OpenPayroll\Models\Payroll\Status::class,
         'payslip'          => \JayThakkar\OpenPayroll\Models\Payslip\Payslip::class,
@@ -95,8 +95,8 @@ return [
         'unpaid_leave' => 'unpaid-leave', // Employee unpaid leave code
         'TDS' => 't-d-s', // Employee TDS
         'ESIC' => 'e-s-i-c', // Employee ESIC
-        'PF' => 'p-f', // Employee PF (Provident Fund)
-        'PT' => 'p-t', // Professional Tax
+        'PF' => 'p-f(-provident-fund)', // Employee PF (Provident Fund)
+        'PT' => 'p-t(-professional-tax)', // Professional Tax
     ],
 
     /*
@@ -130,8 +130,8 @@ return [
     */
 
    'processors' => [
-        'default_earning'   => \JayThakkar\OpenPayroll\Processors\Earning\BaseEarningProcessor::class,
-        'default_deduction' => \JayThakkar\OpenPayroll\Processors\Deduction\BaseDeductionProcessor::class,
+        'default_earning'   => \App\Http\Controllers\OpenPayroll\Setting\BaseEarningController::class,
+        'default_deduction' => \App\Http\Controllers\OpenPayroll\Setting\BaseDeductionController::class,
         'earnings'          => [
             // 'Basic'     => \JayThakkar\OpenPayroll\Processors\Earning\BasicEarningProcessor::class,
             // 'Overtime'  => \JayThakkar\OpenPayroll\Processors\Earning\OvertimeEarningProcessor::class,

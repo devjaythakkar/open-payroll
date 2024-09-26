@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use JayThakkar\OpenPayroll\Traits\ReferenceTrait;
 use Illuminate\Database\Seeder;
 

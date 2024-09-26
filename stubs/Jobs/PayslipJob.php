@@ -40,9 +40,22 @@ class PayslipJob implements ShouldQueue
         $total_days_in_month = $carbon_date->daysInMonth;
         $requested_date = $year.'-'.$month.'-'.$total_days_in_month;
 
-        foreach ($employees as $hashslug) {
+        foreach ($employees as $employee) {
+            $hashslug = $employee->hashslug;
             $employee = Employee::hashslug($hashslug)->firstOrFail();
 
+            // Here, you can fetch the custom logic to retrive the employee's salary
+            $payslip = $employee->payslips()->updateOrCreate([
+                'payroll_id'   => $payroll->id,
+                'basic_salary' => money()->toMachine($employee->salary),
+                'gross_salary' => money()->toMachine($employee->salary),
+                'net_salary'   => money()->toMachine($employee->salary),
+                'is_verified'  => false,
+                'is_approved'  => false,
+                'is_locked'    => false,
+            ]);
+
+            // // CUSTOMCODE
             // $salary_details =  $employee->increment_details()
             //     ->where('increment_date', '<=', date('Y-m-d', strtotime($requested_date)))
             //     ->orderBy('increment_date', 'desc')
@@ -50,24 +63,13 @@ class PayslipJob implements ShouldQueue
 
             // $payslip = $employee->payslips()->updateOrCreate([
             //     'payroll_id'   => $payroll->id,
-            //     'basic_salary' => money()->toHuman($salary_details->basic_salary),
-            //     'gross_salary' => money()->toHuman($salary_details->basic_salary),
-            //     'net_salary'   => money()->toHuman($salary_details->basic_salary),
+            //     'basic_salary' => money()->toMachine($salary_details->basic_salary),
+            //     'gross_salary' => money()->toMachine($salary_details->basic_salary),
+            //     'net_salary'   => money()->toMachine($salary_details->basic_salary),
             //     'is_verified'  => false,
             //     'is_approved'  => false,
             //     'is_locked'    => false,
             // ]);
-
-            // Here, you can fetch the custom logic to retrive the employee's salary
-            $payslip = $employee->payslips()->updateOrCreate([
-                'payroll_id'   => $payroll->id,
-                'basic_salary' => money()->toHuman($employee->salary),
-                'gross_salary' => money()->toHuman($employee->salary),
-                'net_salary'   => money()->toHuman($employee->salary),
-                'is_verified'  => false,
-                'is_approved'  => false,
-                'is_locked'    => false,
-            ]);
 
             $class = config('open-payroll.processors.default_deduction');
             if (class_exists($class)) {

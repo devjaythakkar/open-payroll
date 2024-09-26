@@ -14,16 +14,16 @@ class Employee extends normalEmployee
 
     public function salary()
     {
-        return $this->hasOne(Salary::class, 'user_id');
+        return $this->hasOne(Salary::class, 'user_id', 'user_id');
     }
 
     public function position()
     {
-        return $this->hasOne(Position::class, 'user_id');
+        return $this->hasOne(Position::class, 'user_id', 'user_id');
     }
 
     public function payslips()
     {
-        return $this->hasMany(Payslip::class, 'user_id');
+        return $this->hasMany(Payslip::class, 'user_id', 'user_id');
     }
 }
